@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Affinitty replica — interaction & animation layer
+   Complements the preserved Framer stylesheet (framer.css).
+   ========================================================================== */
+
+:root {
+  --framer-viewport-height: 100dvh;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.17, 0.67, 0.3, 1.13);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #fff;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+body.page-leaving {
+  opacity: 0;
+}
+
+::selection {
+  background: #c1f05c;
+  color: #000;
+}
+
+/* --------------------------------------------------------------------------
+   Appear (scroll-reveal) animations — mirrors Framer "Appear" effects
+   -------------------------------------------------------------------------- */
+.js [data-framer-appear-id].pre-appear {
+  opacity: 0 !important;
+  transform: translateY(26px) !important;
+}
+
+.js [data-framer-appear-id] {
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+
+/* --------------------------------------------------------------------------
+   Hero custom cursor
+   -------------------------------------------------------------------------- */
+.hero-cursor-active .framer-rrcxbd,
+.hero-cursor-active .framer-rrcxbd * {
+  cursor: none !important;
+}
+
+.framer-rdud61 {
+  pointer-events: none;
+  z-index: 30;
+  will-change: transform;
+}
+
+.framer-rdud61 .framer-x1g9t3 {
+  transition: transform 0.25s var(--ease-out-expo);
+}
+
+.framer-rdud61 .framer-ih7km7 {
+  transform-origin: 10% 0%;
+}
+
+/* --------------------------------------------------------------------------
+   Section "tag" code-components (More about me / Featured projects / …)
+   -------------------------------------------------------------------------- */
+[data-code-component-plugin-id] [data-tag-text]:empty::before {
+  content: attr(data-tag-text);
+}
+
+/* --------------------------------------------------------------------------
+   About-me per-letter scroll colour reveal
+   -------------------------------------------------------------------------- */
+.js .letter-reveal-ready span[style*="position: absolute"],
+.js .letter-reveal-ready span[style*="position:absolute"] {
+  transition: opacity 0.05s linear;
+}
+
+/* --------------------------------------------------------------------------
+   Testimonials
+   -------------------------------------------------------------------------- */
+.framer-1sjsuhg-container {
+  overflow: visible;
+}
+
+.framer-15vaejw .framer-1pwaikz .framer-text > span {
+  display: inline-block;
+}
+
+.js .quote-anim .framer-text > span {
+  opacity: 0;
+  transform: translateY(0.6em);
+  transition:
+    opacity 0.5s var(--ease-out-expo),
+    transform 0.6s var(--ease-out-expo);
+}
+
+.js .quote-anim.quote-in .framer-text > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.t-slide {
+  transition:
+    opacity 0.45s var(--ease-out-expo),
+    transform 0.45s var(--ease-out-expo);
+}
+
+.t-slide.t-out {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+.t-slide.t-pre {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/* progress bar fill */
+.t-progress-fill {
+  transition: none;
+}
+
+.t-progress-fill.t-run {
+  transition: width var(--t-dur, 6000ms) linear;
+  width: 100% !important;
+}
+
+/* arrow hover feedback */
+.framer-1v6ocmr:hover .framer-jiTU8,
+.framer-1f0llxj:hover .framer-vn1v7 {
+  opacity: 0.55;
+}
+
+.framer-jiTU8,
+.framer-vn1v7 {
+  transition: opacity 0.2s ease, transform 0.25s var(--ease-out-expo);
+}
+
+.framer-1v6ocmr:active .framer-jiTU8 { transform: translateX(-2px); }
+.framer-1f0llxj:active .framer-vn1v7 { transform: translateX(2px); }
+
+/* --------------------------------------------------------------------------
+   Nav — hover tooltip labels
+   -------------------------------------------------------------------------- */
+.framer-ux18V .framer-xxzy16 {
+  transition:
+    opacity 0.3s var(--ease-spring),
+    transform 0.3s var(--ease-spring);
+  pointer-events: none;
+}
+
+.framer-ux18V:hover .framer-xxzy16,
+.framer-ux18V:focus-visible .framer-xxzy16 {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.framer-ux18V {
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.framer-ux18V:not([data-framer-page-link-current="true"]):hover {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Footer — email copy button
+   -------------------------------------------------------------------------- */
+.framer-3dmM2 .framer-1p6oo4l {
+  overflow: hidden;
+}
+
+.framer-3dmM2 .framer-eUcs1,
+.framer-3dmM2 .framer-CLNEK {
+  transition:
+    transform 0.35s var(--ease-spring),
+    opacity 0.3s ease;
+}
+
+.framer-3dmM2.is-copied .framer-eUcs1 {
+  transform: translateX(-130%) !important;
+  opacity: 0 !important;
+}
+
+.framer-3dmM2.is-copied .framer-CLNEK {
+  transform: translateX(-100%) !important;
+  opacity: 1 !important;
+}
+
+.framer-3dmM2 .framer-CLNEK {
+  transform: translateX(30%) !important;
+  opacity: 0 !important;
+}
+
+/* corner squares pop in on hover / copied state */
+.framer-3dmM2 [data-framer-name="Corner rectangle"] {
+  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.17, 0.67, 0.3, 1.3);
+}
+
+.framer-3dmM2:hover [data-framer-name="Corner rectangle"],
+.framer-3dmM2.is-copied [data-framer-name="Corner rectangle"] {
+  opacity: 1 !important;
+}
+
+/* two-state button label */
+.framer-3dmM2 button {
+  overflow: hidden;
+}
+
+.framer-3dmM2 button > span[data-copy-stack] {
+  display: grid;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.framer-3dmM2.is-copied button > span[data-copy-stack] {
+  transform: translateY(-50%);
+}
+
+/* social icons hover */
+.framer-xsnKr {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.framer-xsnKr:hover {
+  transform: scale(1.08);
+}
+
+.framer-xsnKr .framer-zupkoh {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s var(--ease-spring);
+}
+
+.framer-xsnKr:hover .framer-zupkoh {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* "Let's talk" footer CTA */
+a.lets-talk-link {
+  display: block;
+  width: 100%;
+  max-width: inherit;
+  text-decoration: none;
+}
+
+a.lets-talk-link svg {
+  transition: transform 0.5s var(--ease-out-expo), opacity 0.3s ease;
+}
+
+a.lets-talk-link:hover svg {
+  transform: scale(1.015);
+}
+
+/* --------------------------------------------------------------------------
+   Animated ribbons — gentle perpetual drift
+   -------------------------------------------------------------------------- */
+[data-ribbon] svg + svg {
+  animation: ribbon-drift 18s ease-in-out infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+@keyframes ribbon-drift {
+  0%   { transform: translate3d(-1.6%, 1.2%, 0) rotate(-1.1deg) scale(1.02); }
+  50%  { transform: translate3d(0.8%, -0.8%, 0) rotate(0.6deg)  scale(1.05); }
+  100% { transform: translate3d(1.6%, 1%, 0) rotate(1.1deg)   scale(1.02); }
+}
+
+/* --------------------------------------------------------------------------
+   "Open for work" pixel status grid
+   -------------------------------------------------------------------------- */
+[data-pixel-grid] > div > div {
+  transition: background-color 0.5s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Project cards — image hover zoom
+   -------------------------------------------------------------------------- */
+.framer-8d8QZ .framer-1n0t8g0,
+.framer-8d8QZ [data-framer-name="Image container"] {
+  overflow: hidden;
+}
+
+.framer-8d8QZ [data-framer-name="Image"] img,
+.framer-8d8QZ [data-framer-name="Image container"] img {
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.framer-8d8QZ:hover [data-framer-name="Image"] img,
+.framer-8d8QZ:hover [data-framer-name="Image container"] img {
+  transform: scale(1.03);
+}
+
+a[data-framer-name="Primary"] {
+  transition: opacity 0.2s ease;
+}
+
+a[data-framer-name="Primary"]:hover {
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive adaptations (desktop variant DOM is used at every width;
+   framer.css already carries many per-breakpoint tweaks)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+  .framer-k5ju24 {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .framer-hycrhy {
+    width: calc(100% - 32px) !important;
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    padding: 24px 16px 40px !important;
+  }
+
+  .framer-zpo4as {
+    position: relative !important;
+    width: calc(100% - 32px) !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: 16px !important;
+    aspect-ratio: 4 / 5;
+    margin-top: 56px;
+  }
+
+  .framer-1jffotd {
+    display: none !important;
+  }
+
+  .framer-VtKyz,
+  .framer-VtKyz.framer-12sexql {
+    width: 100% !important;
+    padding: 64px 20px 96px !important;
+  }
+
+  .framer-7judbf {
+    flex-flow: column !important;
+    gap: 24px !important;
+  }
+
+  .framer-1oxt1o8 {
+    display: none !important;
+  }
+
+  .framer-1sjsuhg-container {
+    max-width: 100% !important;
+  }
+
+  .framer-6pttY,
+  .framer-6pttY.framer-n0pq8i {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .framer-SrPcj.framer-qht50z {
+    gap: 120px !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
