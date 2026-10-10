@@ -1,0 +1,8 @@
+@font-face { font-family: "PP Neue Montreal Medium"; src: url("https://framerusercontent.com/assets/6uIfYl8bnz9kOy3KOuV7PxhFPhA.woff2"); font-display: swap; font-style: normal; font-weight: 500 }
+@font-face { font-family: "PP Neue Montreal Bold"; src: url("https://framerusercontent.com/assets/wa1QQCb6cXOn2xBXS059rEsCfsc.woff2"); font-display: swap; font-style: normal; font-weight: 700 }
+@font-face { font-family: "PP Neue Montreal SemiBold italic"; src: url("https://framerusercontent.com/assets/CTQIqyo8XNfXYVfDTiTmbULZs.woff2"); font-display: swap; font-style: italic; font-weight: 600 }
+@font-face { font-family: "PP Neue Montreal Italic"; src: url("https://framerusercontent.com/assets/CnGvKXkXJFhnnbpqfxZ8IE1CrU.woff2"); font-display: swap; font-style: italic; font-weight: 400 }
+@font-face { font-family: "PP Neue Montreal Medium Placeholder"; src: local("Arial"); ascent-override: 98.07%; descent-override: 24.77%; line-gap-override: 0.00%; size-adjust: 97.68% }
+@font-face { font-family: "PP Neue Montreal Bold Placeholder"; src: local("Arial"); ascent-override: 92.31%; descent-override: 23.32%; line-gap-override: 0.00%; size-adjust: 103.78% }
+@font-face { font-family: "PP Neue Montreal SemiBold italic Placeholder"; src: local("Arial"); ascent-override: 94.17%; descent-override: 23.79%; line-gap-override: 0.00%; size-adjust: 101.73% }
+@font-face { font-family: "PP Neue Montreal Italic Placeholder"; src: local("Arial"); ascent-override: 99.63%; descent-override: 25.17%; line-gap-override: 0.00%; size-adjust: 96.15% }
